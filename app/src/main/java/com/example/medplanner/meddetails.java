@@ -167,6 +167,7 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
         dummy.add(0L);
         dummy.add(0L);
         dummy.add(0L);
+        Log.d("HELLO","WORLD");
         number_of_alarms = sharedPreferences.getInt("numberOfAlarm",0);
         builder = new AlertDialog.Builder(this);
         builder.setTitle("MEDICINE NAME(s)")
