@@ -48,7 +48,7 @@ public class RemainderAdapter extends RecyclerView.Adapter<RemainderAdapter.MyVH
         holder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("BOSDK",sdf.format(longs.get(position)));
+                Log.d("K",sdf.format(longs.get(position)));
 
                 if(sqlHelper.onDeleteTime(longs.get(position)))
                 {

@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Med Planner</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="app_name">Medicine Planner</string>
     <string name="title_activity_primary__screen">Primary_Screen</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -15,15 +14,9 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-    <string-array name="medicine_types">
-        <item>A</item>
-        <item>b</item>
-        <item>c</item>
-        <item>d</item>
-        <item>e</item>
-        <item>f</item>
-        <item>g</item>
-        <item>h</item>
-    </string-array>
-    <string name="medicine">medicine_types</string>
+
+    <string name="Hello">Welcome to Med Planner</string>
+    <string name="E_A">Email Address</string>
+    <string name="P_W">Password</string>
+    <string name="reg">New to Med Planner?Sign UP</string>
 </resources>

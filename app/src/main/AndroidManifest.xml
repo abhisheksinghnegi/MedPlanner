@@ -10,13 +10,17 @@
         android:roundIcon="@mipmap/ic_launchered_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".med_details2"></activity>
-        <activity android:name=".meddetails" />
+        <activity android:name=".Contact_us"></activity>
+        <activity android:name=".registerActivity" />
+        <activity android:name=".CustomAlarmScreen" />
+        <activity
+            android:name=".meddetails"
+            android:theme="@style/meddetails" />
         <activity
             android:name=".Primary_Screen"
             android:label="@string/title_activity_primary__screen"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".loginActivity" />
         <activity
             android:name=".splash_screen"
             android:theme="@style/NoTheme">
@@ -28,6 +32,8 @@
         </activity>
 
         <receiver android:name=".Alarmbroadcast" />
+
+        <service android:name=".TunePlayer" />
     </application>
 
 </manifest>

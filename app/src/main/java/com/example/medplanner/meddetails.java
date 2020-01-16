@@ -34,6 +34,7 @@ import com.flask.colorpicker.OnColorSelectedListener;
 import com.flask.colorpicker.builder.ColorPickerClickListener;
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputLayout;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
 import java.lang.reflect.Array;
@@ -55,6 +56,7 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
     ImageView color;
     int number_of_alarms;
     RecyclerView recyclerView;
+    TextInputLayout t1;
     TextView what_med;
     int checkeditem,startAlarm,prev,add;
     PendingIntent pend1;
@@ -95,6 +97,7 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
         fri.setOnClickListener(this);
         sat.setOnClickListener(this);
         sun.setOnClickListener(this);
+        t1 = findViewById(R.id.medlayout);
         recyclerView = findViewById(R.id.remainderRecycle);
         set_remainder.setOnClickListener(this);
         sqlHelper = new SQLHelper(this);
@@ -107,6 +110,7 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
         intent = new Intent(this,Alarmbroadcast.class);
         alarmintent = new Intent(this,Alarmbroadcast.class);
         SharedPreferences sharedPreferences = getSharedPreferences("ALARMS",MODE_PRIVATE);
+        setcolor();
         if(getIntent().getIntExtra("MODE",0)==1)
         {
             while(cursor.moveToNext()) {
@@ -146,19 +150,19 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
                     bsat = inttoboolean(cursor.getInt(cursor.getColumnIndex("SATURDAY")));
                     bsun = inttoboolean(cursor.getInt(cursor.getColumnIndex("SUNDAY")));
                     if(bmon)
-                        mon.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                        mon.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
                     if(btue)
-                        tue.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                        tue.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
                     if(bwed)
-                        wed.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                        wed.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
                     if(bthr)
-                        thr.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                        thr.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
                     if(bfri)
-                        fri.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                        fri.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
                     if(bsat)
-                        sat.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                        sat.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
                     if(bsun)
-                        sun.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                        sun.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
                 }
             }
         }
@@ -231,6 +235,22 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
 
     }
 
+    private void setcolor() {
+        mon.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EED8D8D8")));
+
+            tue.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EED8D8D8")));
+
+            wed.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EED8D8D8")));
+
+            thr.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EED8D8D8")));
+
+            fri.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EED8D8D8")));
+
+            sat.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EED8D8D8")));
+
+            sun.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EED8D8D8")));
+    }
+
     @Override
     public void onBackPressed() {
         want_back.show();
@@ -245,7 +265,7 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
                 if(!bmon)
                 {
                     bmon = true;
-                    mon.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                    mon.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
 
                 }
                 else
@@ -259,7 +279,7 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
                 if(!btue)
                 {
                     btue = true;
-                    tue.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                    tue.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
 
                 }
                 else
@@ -273,7 +293,7 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
                 if(!bwed)
                 {
                     bwed = true;
-                    wed.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                    wed.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
 
                 }
                 else
@@ -287,7 +307,7 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
                 if(!bthr)
                 {
                     bthr = true;
-                    thr.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                    thr.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
 
                 }
                 else
@@ -301,7 +321,7 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
                 if(!bsun)
                 {
                     bsun = true;
-                    sun.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                    sun.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
 
                 }
                 else
@@ -315,7 +335,7 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
                 if(!bfri)
                 {
                     bfri = true;
-                    fri.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                    fri.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
 
                 }
                 else
@@ -329,7 +349,7 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
                 if(!bsat)
                 {
                     bsat = true;
-                    sat.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EE7E7E7E")));
+                    sat.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C3000000")));
 
                 }
                 else
@@ -408,7 +428,21 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
 
                     }
                     else {
-                        if (sqlHelper.onInsert(string1, string2, getColor, med_Type, timeTell, medsList.get(0), medsList.get(1), medsList.get(2), medsList.get(3), medsList.get(4), booleantoint(bmon), booleantoint(btue), booleantoint(bwed), booleantoint(bthr), booleantoint(bfri), booleantoint(bsat), booleantoint(bsun), startAlarm, number_of_alarms)) {
+                        int flag = 0;
+                        Cursor cursor1 = sqlHelper.onGet();
+                        String s = medname.getText().toString();
+                        if(s.isEmpty())
+                            flag = 1;
+                        while (cursor1.moveToNext()) {
+
+                            if (s.equals(cursor1.getString(cursor1.getColumnIndex("MEDICINE_NAME")))) {
+                                flag = 1;
+                                break;
+                            }
+                        }
+                        if(flag==1)
+                            t1.setError("Incorrect");
+                        if (sqlHelper.onInsert(string1, string2, getColor, med_Type, timeTell, medsList.get(0), medsList.get(1), medsList.get(2), medsList.get(3), medsList.get(4), booleantoint(bmon), booleantoint(btue), booleantoint(bwed), booleantoint(bthr), booleantoint(bfri), booleantoint(bsat), booleantoint(bsun), startAlarm, number_of_alarms)&&flag==0) {
                             Toast.makeText(meddetails.this, "PASSED", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(meddetails.this, Primary_Screen.class);
                             startActivity(intent);
@@ -444,6 +478,7 @@ public class meddetails extends AppCompatActivity implements View.OnClickListene
                             public void onClick(DialogInterface dialog, int which) {
                             }
                         })
+                        .lightnessSliderOnly()
                         .build()
                         .show();
                 break;

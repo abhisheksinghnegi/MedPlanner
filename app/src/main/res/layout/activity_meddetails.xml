@@ -34,19 +34,25 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="7dp">
-
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/medlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
             <EditText
                 android:id="@+id/text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Medicine Name" />
-
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/text2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="About Medicine" />
-
+                android:hint="Dosages" />
+        </com.google.android.material.textfield.TextInputLayout>
             <LinearLayout
                 android:id="@+id/medicine_color"
                 android:layout_width="match_parent"

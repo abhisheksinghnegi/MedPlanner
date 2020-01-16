@@ -38,7 +38,7 @@ public class SQLHelper extends SQLiteOpenHelper {
 
 
 
-    SQLHelper(Context context) {
+   public SQLHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
     }
 

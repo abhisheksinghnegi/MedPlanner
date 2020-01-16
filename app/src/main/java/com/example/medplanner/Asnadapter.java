@@ -52,7 +52,7 @@ public class Asnadapter extends RecyclerView.Adapter<Asnadapter.MYVH> {
         holder.t1.setText(arrayList.get(position).alarm);
         holder.t2.setText(arrayList.get(position).medname);
         holder.t3.setText(arrayList.get(position).medType);
-        holder.t3.setText(arrayList.get(position).bIO);
+        holder.t4.setText(arrayList.get(position).bIO);
         holder.frame.setBackgroundColor(Color.parseColor(arrayList.get(position).color));
         holder.frame.setOnClickListener(new View.OnClickListener() {
             @Override

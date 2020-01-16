@@ -2,6 +2,7 @@ package com.example.medplanner;
 
 import android.content.ComponentName;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -47,6 +48,8 @@ SQLHelper sqlHelper;
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -108,6 +111,7 @@ SQLHelper sqlHelper;
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(Primary_Screen.this,Contact_us.class));
             return true;
         }
 
@@ -121,25 +125,23 @@ SQLHelper sqlHelper;
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
             Intent i = new Intent(this,meddetails.class);
             startActivity(i);
             finish();
+            // Handle the camera action
+        }  else if (id == R.id.nav_slideshow) {
+            startActivity(new Intent(Primary_Screen.this,Contact_us.class));
 
-        } else if (id == R.id.nav_slideshow) {
 
-            Intent intent = new Intent();
-            intent.setAction("com.abhishek.singh.negi");
-            intent.setComponent(new ComponentName("com.example.asnbroadcastreciever","com.example.asnbroadcastreciever.Mybroadcast"));//very important line moving from one activity to another just like normal intent
-            sendBroadcast(intent);//sending broadcast at a click
 
         } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            SharedPreferences sp = getSharedPreferences("login",MODE_PRIVATE);
+            SharedPreferences.Editor edit1=sp.edit();
+            edit1.putString("is_login","2");
+            edit1.apply();
+            Intent i1 = new Intent(Primary_Screen.this,loginActivity.class);
+            startActivity(i1);
+            finish();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
